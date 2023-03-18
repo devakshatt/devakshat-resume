@@ -676,3 +676,19 @@ var animateReveal = function() {
 
 }
 
+  const copyToClipboard = (copyValue) =>{
+  	navigator.clipboard.writeText(copyValue);
+	message= "📋 Text copied to clipboard: " + copyValue;
+	showSnackbar(message);
+};
+
+const showSnackbar =(message)=>{
+	var snackbar = document.getElementById("snackbar");
+
+	snackbar.innerHTML=message;
+	// Add the "show" class to DIV
+	snackbar.className = "show";
+  
+	// After 3 seconds, remove the show class from DIV
+	setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+}
